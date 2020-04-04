@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="enviosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CIUDAD">
+    <Key>
+      <PropertyRef Name="COD_CIUD" />
+    </Key>
+    <Property Name="COD_CIUD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ENVIOS" Relationship="Self.FK_ENVIOS_CIUDAD" FromRole="CIUDAD" ToRole="ENVIOS" />
+    <NavigationProperty Name="ENVIOS1" Relationship="Self.FK_ENVIOS_CIUDAD1" FromRole="CIUDAD" ToRole="ENVIOS" />
+    <NavigationProperty Name="PESOS" Relationship="Self.FK_PESOS_CIUDAD" FromRole="CIUDAD" ToRole="PESOS" />
+    <NavigationProperty Name="PESOS1" Relationship="Self.FK_PESOS_CIUDAD1" FromRole="CIUDAD" ToRole="PESOS" />
+  </EntityType>
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="CEDULA" />
+    </Key>
+    <Property Name="CEDULA" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOMBRES" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APELLIDOS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_NAC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_REG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ESTADO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ENVIOS" Relationship="Self.FK_ENVIOS_CLIENTE" FromRole="CLIENTE" ToRole="ENVIOS" />
+    <NavigationProperty Name="ENVIOS1" Relationship="Self.FK_ENVIOS_CLIENTE1" FromRole="CLIENTE" ToRole="ENVIOS" />
+  </EntityType>
+  <EntityType Name="ENVIOS">
+    <Key>
+      <PropertyRef Name="COD_GUIA" />
+    </Key>
+    <Property Name="COD_GUIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CEDULA_EMI" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CEDULA_DES" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CIUD_ORIG" Type="Int32" Nullable="false" />
+    <Property Name="CIUD_DEST" Type="Int32" Nullable="false" />
+    <Property Name="PESO" Type="Int32" Nullable="false" />
+    <Property Name="VALOR_ASEG" Type="Int32" Nullable="false" />
+    <Property Name="PRECIOKL" Type="Int32" Nullable="false" />
+    <Property Name="VALOR_ENVI" Type="Int32" Nullable="false" />
+    <Property Name="COD_ESTADO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CIUDAD" Relationship="Self.FK_ENVIOS_CIUDAD" FromRole="ENVIOS" ToRole="CIUDAD" />
+    <NavigationProperty Name="CIUDAD1" Relationship="Self.FK_ENVIOS_CIUDAD1" FromRole="ENVIOS" ToRole="CIUDAD" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_ENVIOS_CLIENTE" FromRole="ENVIOS" ToRole="CLIENTE" />
+    <NavigationProperty Name="CLIENTE1" Relationship="Self.FK_ENVIOS_CLIENTE1" FromRole="ENVIOS" ToRole="CLIENTE" />
+    <NavigationProperty Name="ESTADOS" Relationship="Self.FK_ENVIOS_ESTADOS" FromRole="ENVIOS" ToRole="ESTADOS" />
+  </EntityType>
+  <EntityType Name="ESTADOS">
+    <Key>
+      <PropertyRef Name="COD_ESTADO" />
+    </Key>
+    <Property Name="COD_ESTADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ENVIOS" Relationship="Self.FK_ENVIOS_ESTADOS" FromRole="ESTADOS" ToRole="ENVIOS" />
+  </EntityType>
+  <EntityType Name="PESOS">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CIUD_ORIG" Type="Int32" Nullable="false" />
+    <Property Name="CIUD_DEST" Type="Int32" Nullable="false" />
+    <Property Name="PRECIOKL" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CIUDAD" Relationship="Self.FK_PESOS_CIUDAD" FromRole="PESOS" ToRole="CIUDAD" />
+    <NavigationProperty Name="CIUDAD1" Relationship="Self.FK_PESOS_CIUDAD1" FromRole="PESOS" ToRole="CIUDAD" />
+  </EntityType>
+  <Association Name="FK_ENVIOS_CIUDAD">
+    <End Role="CIUDAD" Type="Self.CIUDAD" Multiplicity="1" />
+    <End Role="ENVIOS" Type="Self.ENVIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIUDAD">
+        <PropertyRef Name="COD_CIUD" />
+      </Principal>
+      <Dependent Role="ENVIOS">
+        <PropertyRef Name="CIUD_ORIG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENVIOS_CIUDAD1">
+    <End Role="CIUDAD" Type="Self.CIUDAD" Multiplicity="1" />
+    <End Role="ENVIOS" Type="Self.ENVIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIUDAD">
+        <PropertyRef Name="COD_CIUD" />
+      </Principal>
+      <Dependent Role="ENVIOS">
+        <PropertyRef Name="CIUD_DEST" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PESOS_CIUDAD">
+    <End Role="CIUDAD" Type="Self.CIUDAD" Multiplicity="1" />
+    <End Role="PESOS" Type="Self.PESOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIUDAD">
+        <PropertyRef Name="COD_CIUD" />
+      </Principal>
+      <Dependent Role="PESOS">
+        <PropertyRef Name="CIUD_ORIG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PESOS_CIUDAD1">
+    <End Role="CIUDAD" Type="Self.CIUDAD" Multiplicity="1" />
+    <End Role="PESOS" Type="Self.PESOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIUDAD">
+        <PropertyRef Name="COD_CIUD" />
+      </Principal>
+      <Dependent Role="PESOS">
+        <PropertyRef Name="CIUD_DEST" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENVIOS_CLIENTE">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="ENVIOS" Type="Self.ENVIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="CEDULA" />
+      </Principal>
+      <Dependent Role="ENVIOS">
+        <PropertyRef Name="CEDULA_EMI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENVIOS_CLIENTE1">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="ENVIOS" Type="Self.ENVIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="CEDULA" />
+      </Principal>
+      <Dependent Role="ENVIOS">
+        <PropertyRef Name="CEDULA_DES" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENVIOS_ESTADOS">
+    <End Role="ESTADOS" Type="Self.ESTADOS" Multiplicity="1" />
+    <End Role="ENVIOS" Type="Self.ENVIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADOS">
+        <PropertyRef Name="COD_ESTADO" />
+      </Principal>
+      <Dependent Role="ENVIOS">
+        <PropertyRef Name="COD_ESTADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="serviceEntidades" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CIUDAD" EntityType="Self.CIUDAD" />
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+    <EntitySet Name="ENVIOS" EntityType="Self.ENVIOS" />
+    <EntitySet Name="ESTADOS" EntityType="Self.ESTADOS" />
+    <EntitySet Name="PESOS" EntityType="Self.PESOS" />
+    <AssociationSet Name="FK_ENVIOS_CIUDAD" Association="Self.FK_ENVIOS_CIUDAD">
+      <End Role="CIUDAD" EntitySet="CIUDAD" />
+      <End Role="ENVIOS" EntitySet="ENVIOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENVIOS_CIUDAD1" Association="Self.FK_ENVIOS_CIUDAD1">
+      <End Role="CIUDAD" EntitySet="CIUDAD" />
+      <End Role="ENVIOS" EntitySet="ENVIOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PESOS_CIUDAD" Association="Self.FK_PESOS_CIUDAD">
+      <End Role="CIUDAD" EntitySet="CIUDAD" />
+      <End Role="PESOS" EntitySet="PESOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PESOS_CIUDAD1" Association="Self.FK_PESOS_CIUDAD1">
+      <End Role="CIUDAD" EntitySet="CIUDAD" />
+      <End Role="PESOS" EntitySet="PESOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENVIOS_CLIENTE" Association="Self.FK_ENVIOS_CLIENTE">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="ENVIOS" EntitySet="ENVIOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENVIOS_CLIENTE1" Association="Self.FK_ENVIOS_CLIENTE1">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="ENVIOS" EntitySet="ENVIOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENVIOS_ESTADOS" Association="Self.FK_ENVIOS_ESTADOS">
+      <End Role="ESTADOS" EntitySet="ESTADOS" />
+      <End Role="ENVIOS" EntitySet="ENVIOS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

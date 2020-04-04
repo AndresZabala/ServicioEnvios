@@ -1,0 +1,21 @@
+C:\Users\ANDRES PC\source\repos\ServiciosEnvios\ServiciosEnvios\bin\ServiciosEnvios.dll.config
+C:\Users\ANDRES PC\source\repos\ServiciosEnvios\ServiciosEnvios\bin\ServiciosEnvios.dll
+C:\Users\ANDRES PC\source\repos\ServiciosEnvios\ServiciosEnvios\bin\ServiciosEnvios.pdb
+C:\Users\ANDRES PC\source\repos\ServiciosEnvios\ServiciosEnvios\bin\EntityFramework.dll
+C:\Users\ANDRES PC\source\repos\ServiciosEnvios\ServiciosEnvios\bin\EntityFramework.SqlServer.dll
+C:\Users\ANDRES PC\source\repos\ServiciosEnvios\ServiciosEnvios\bin\EntityFramework.xml
+C:\Users\ANDRES PC\source\repos\ServiciosEnvios\ServiciosEnvios\bin\EntityFramework.SqlServer.xml
+C:\Users\ANDRES PC\source\repos\ServiciosEnvios\ServiciosEnvios\obj\Debug\ServiciosEnvios.csproj.CopyComplete
+C:\Users\ANDRES PC\source\repos\ServiciosEnvios\ServiciosEnvios\obj\Debug\ServiciosEnvios.dll
+C:\Users\ANDRES PC\source\repos\ServiciosEnvios\ServiciosEnvios\obj\Debug\ServiciosEnvios.pdb
+C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\bin\ServiciosEnvios.dll.config
+C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\bin\ServiciosEnvios.dll
+C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\bin\ServiciosEnvios.pdb
+C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\bin\EntityFramework.dll
+C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\bin\EntityFramework.SqlServer.dll
+C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\bin\EntityFramework.xml
+C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\bin\EntityFramework.SqlServer.xml
+C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\obj\Debug\ServiciosEnvios.csproj.CopyComplete
+C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\obj\Debug\ServiciosEnvios.dll
+C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\obj\Debug\ServiciosEnvios.pdb
+C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\obj\Debug\ServiciosEnvios.csprojAssemblyReference.cache

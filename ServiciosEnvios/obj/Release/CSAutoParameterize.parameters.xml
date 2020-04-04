@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="enviosEntidades-Web.config Connection String" description="enviosEntidades Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="metadata=res://*/ModelBD.csdl|res://*/ModelBD.ssdl|res://*/ModelBD.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=ANDRES-ZABALA\SQLEXPRESS;initial catalog=envios;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\ANDRES\ PC\\source\\repos\\ServiciosEnvios\\ServiciosEnvios\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='enviosEntidades']/@connectionString" />
+  </parameter>
+</parameters>

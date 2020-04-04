@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="enviosModelStoreContainer" CdmEntityContainer="enviosEntidades">
+    <EntitySetMapping Name="CIUDAD">
+      <EntityTypeMapping TypeName="enviosModel.CIUDAD">
+        <MappingFragment StoreEntitySet="CIUDAD">
+          <ScalarProperty Name="COD_CIUD" ColumnName="COD_CIUD" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTE">
+      <EntityTypeMapping TypeName="enviosModel.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTE">
+          <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APPELLIDOS" ColumnName="APPELLIDOS" />
+          <ScalarProperty Name="FECHA_NAC" ColumnName="FECHA_NAC" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="FECHA_REG" ColumnName="FECHA_REG" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ENVIOS">
+      <EntityTypeMapping TypeName="enviosModel.ENVIOS">
+        <MappingFragment StoreEntitySet="ENVIOS">
+          <ScalarProperty Name="COD_GUIA" ColumnName="COD_GUIA" />
+          <ScalarProperty Name="CEDULA_EMI" ColumnName="CEDULA_EMI" />
+          <ScalarProperty Name="CEDULA_DES" ColumnName="CEDULA_DES" />
+          <ScalarProperty Name="CIUD_ORIG" ColumnName="CIUD_ORIG" />
+          <ScalarProperty Name="CIUD_DEST" ColumnName="CIUD_DEST" />
+          <ScalarProperty Name="PESO" ColumnName="PESO" />
+          <ScalarProperty Name="VALOR_ASEG" ColumnName="VALOR_ASEG" />
+          <ScalarProperty Name="PRECIOKL" ColumnName="PRECIOKL" />
+          <ScalarProperty Name="VALOR_ENVI" ColumnName="VALOR_ENVI" />
+          <ScalarProperty Name="COD_ESTADO" ColumnName="COD_ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESTADOS">
+      <EntityTypeMapping TypeName="enviosModel.ESTADOS">
+        <MappingFragment StoreEntitySet="ESTADOS">
+          <ScalarProperty Name="COD_ESTADO" ColumnName="COD_ESTADO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PESOS">
+      <EntityTypeMapping TypeName="enviosModel.PESOS">
+        <MappingFragment StoreEntitySet="PESOS">
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="CIUD_ORIG" ColumnName="CIUD_ORIG" />
+          <ScalarProperty Name="CIUD_DEST" ColumnName="CIUD_DEST" />
+          <ScalarProperty Name="PRECIOKL" ColumnName="PRECIOKL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
