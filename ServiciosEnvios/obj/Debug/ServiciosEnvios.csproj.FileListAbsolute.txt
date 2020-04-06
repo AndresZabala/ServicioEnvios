@@ -19,3 +19,4 @@ C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\obj\Debug\Servici
 C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\obj\Debug\ServiciosEnvios.dll
 C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\obj\Debug\ServiciosEnvios.pdb
 C:\Users\SISTEMAS\source\repos\ServiciosEnvios\ServiciosEnvios\obj\Debug\ServiciosEnvios.csprojAssemblyReference.cache
+C:\Users\ANDRES PC\source\repos\ServiciosEnvios\ServiciosEnvios\obj\Debug\ServiciosEnvios.csprojAssemblyReference.cache
