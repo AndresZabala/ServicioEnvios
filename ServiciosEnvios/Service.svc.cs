@@ -47,7 +47,7 @@ namespace ServiciosEnvios
                     cliente.FECHA_REG = efCliente.FECHA_REG;
                     bd.Entry(efCliente).CurrentValues.SetValues(cliente);
                     bd.SaveChanges();
-                    return mensaje.errores("Cliente Actualizado Exitosamente.");
+                    return mensaje.exitoso("Cliente Actualizado Exitosamente.");
                 }
             }
             catch
@@ -149,7 +149,7 @@ namespace ServiciosEnvios
         public ModelEnvioInfo registrarEnvioInfo(EnvioInfo objEnvioinfo)
         {
             try
-            {                
+            {
                 if (objEnvioinfo != null)
                 {
                     var objEnvio = new ENVIOS
@@ -168,6 +168,9 @@ namespace ServiciosEnvios
                     bd.ENVIOS.Add(objEnvio);
                     bd.SaveChanges();
 
+                    var IDGuia = bd.ENVIOS.Max(x => x.COD_GUIA);
+                    objEnvioinfo.COD_GUIA = IDGuia;
+
                     return new ModelEnvioInfo
                     {
                         error = false,
@@ -185,7 +188,7 @@ namespace ServiciosEnvios
                     };
                 }
             }
-            catch
+            catch(DbEntityValidationException e)
             {
                 return new ModelEnvioInfo
                 {
@@ -194,8 +197,8 @@ namespace ServiciosEnvios
                     content = null
                 };
             }
-           
         }
+
 
         public ModelEnvioInfo obtenerEnvio(string codigoGuia)
         {
@@ -284,7 +287,7 @@ namespace ServiciosEnvios
                     };
                 }
             }
-            catch(DbEntityValidationException e)
+            catch
             {
                 return new ModelEnvioInfo
                 {
@@ -307,6 +310,7 @@ namespace ServiciosEnvios
                     bd.SaveChanges();
                     return mensaje.exitoso("Estado Actualizado.");
                 }
+                else
                 {
                     return mensaje.errores("No se logró actualizar el estado del envio.");
                 }
